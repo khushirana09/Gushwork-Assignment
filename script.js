@@ -1,3 +1,22 @@
+// fixed navbar on scroll
+/* STICKY HEADER SCRIPT — place before </body> */
+(function () {
+    const stickyHeader = document.getElementById('stickyHeader');
+    const nav = document.querySelector('nav');
+
+    function onScroll() {
+        // Show sticky header after scrolling past the nav height
+        const threshold = nav ? nav.offsetHeight : 77;
+        if (window.scrollY > threshold) {
+            stickyHeader.classList.add('visible');
+        } else {
+            stickyHeader.classList.remove('visible');
+        }
+    }
+
+    window.addEventListener('scroll', onScroll, { passive: true });
+})();
+
 function scrollCarousel(id, dir) {
     const el = document.getElementById(id === 'apps' ? 'appsCarousel' : 'testCarousel');
     el.scrollBy({ left: dir * 300, behavior: 'smooth' });
@@ -6,13 +25,23 @@ function scrollCarousel(id, dir) {
 function toggleFaq(btn) {
     const item = btn.closest('.faq-item');
     const isOpen = item.classList.contains('open');
+
     document.querySelectorAll('.faq-item').forEach(i => {
         i.classList.remove('open');
-        i.querySelector('.chevron').textContent = '∨';
+        const icon = i.querySelector('.chevron img');
+        if (icon) {
+            icon.src = 'images/Chevron-down.png';
+            icon.alt = 'Expand';
+        }
     });
+
     if (!isOpen) {
         item.classList.add('open');
-        btn.querySelector('.chevron').textContent = '∧';
+        const icon = btn.querySelector('.chevron img');
+        if (icon) {
+            icon.src = 'images/Chevron down.png';
+            icon.alt = 'Collapse';
+        }
     }
 }
 
@@ -118,9 +147,7 @@ if (galleryMain && galleryMainImg && zoomLens && zoomPreview) {
         }
 
         const rect = galleryMainImg.getBoundingClientRect();
-        if (!rect.width || !rect.height) {
-            return;
-        }
+        if (!rect.width || !rect.height) return;
 
         let x = e.clientX - rect.left;
         let y = e.clientY - rect.top;
@@ -133,6 +160,14 @@ if (galleryMain && galleryMainImg && zoomLens && zoomPreview) {
 
         zoomLens.style.left = `${lensX}px`;
         zoomLens.style.top = `${lensY}px`;
+
+
+        const galleryRect = galleryMain.getBoundingClientRect();
+        const cursorYInGallery = e.clientY - galleryRect.top;
+        const previewH = zoomPreview.offsetHeight;
+        const maxTop = galleryRect.height - previewH;
+        const previewTop = clamp(cursorYInGallery - previewH / 2, 0, maxTop);
+        zoomPreview.style.top = `${previewTop}px`;
 
         zoomPreview.style.backgroundSize = `${rect.width * zoomFactor}px ${rect.height * zoomFactor}px`;
 
@@ -148,3 +183,77 @@ if (galleryMain && galleryMainImg && zoomLens && zoomPreview) {
     window.addEventListener('resize', hideZoom);
     galleryMainImg.addEventListener('load', syncZoomPreviewImage);
 }
+
+// modal popup open
+const datasheetBtn = document.querySelector('.download-btn');
+const datasheetModal = document.getElementById('datasheetModal');
+const modalClose = document.getElementById('modalClose');
+
+if (datasheetBtn && datasheetModal && modalClose) {
+    function closeModal() {
+        datasheetModal.classList.remove('active');
+        datasheetModal.setAttribute('aria-hidden', 'true');
+    }
+
+    datasheetBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        datasheetModal.classList.add('active');
+        datasheetModal.setAttribute('aria-hidden', 'false');
+    });
+
+    modalClose.addEventListener('click', closeModal);
+
+    datasheetModal.addEventListener('click', function (event) {
+        if (event.target === datasheetModal) {
+            closeModal();
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && datasheetModal.classList.contains('active')) {
+            closeModal();
+        }
+    });
+}
+
+// second popup
+const requestBtn = document.querySelector('.request-quote-btn');
+const requestModal = document.getElementById('requestModal');
+const requestClose = document.getElementById('requestClose');
+
+if (requestBtn && requestModal && requestClose) {
+    function closeRequestModal() {
+        requestModal.classList.remove('active');
+    }
+
+    requestBtn.addEventListener('click', function (event) {
+        event.preventDefault();
+        requestModal.classList.add('active');
+    });
+
+    requestClose.addEventListener('click', closeRequestModal);
+
+    requestModal.addEventListener('click', function (event) {
+        if (event.target === requestModal) {
+            closeRequestModal();
+        }
+    });
+
+    document.addEventListener('keydown', function (event) {
+        if (event.key === 'Escape' && requestModal.classList.contains('active')) {
+            closeRequestModal();
+        }
+    });
+}
+
+// modal popup form submission
+const emailInput = document.getElementById('modalEmail');
+const downloadBtn = document.getElementById('downloadBrochureBtn');
+
+emailInput.addEventListener('input', () => {
+    if (emailInput.value.trim().length > 0) {
+        downloadBtn.classList.add('active');
+    } else {
+        downloadBtn.classList.remove('active');
+    }
+});

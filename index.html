@@ -15,6 +15,20 @@
 <body>
 
     <!-- NAV -->
+    <!-- Add this BEFORE your <nav> tag -->
+    <div class="sticky-header" id="stickyHeader">
+        <div class="sticky-header-inner">
+            <div class="sticky-logo">
+                <img src="images/logo.png" alt="Mangalam HDPE Pipes logo">
+            </div>
+            <div class="sticky-links">
+                <a href="#">About Us</a>
+                <a href="#">Products ∨</a>
+                <a href="#" class="sticky-cta">Contact Us</a>
+            </div>
+        </div>
+    </div>
+
     <nav>
         <div class="nav-inside">
             <div class="logo">
@@ -43,24 +57,30 @@
                 <div class="gallery-main">
                     <img src="images/fishwork.jpg" alt="HDPE Pipe Installation"
                         onerror="this.style.background='#cbd5e1';this.style.display='block'">
+                    <div class="zoom-lens"></div> <!-- Add this line -->
                     <div class="gallery-nav">
-                        <button class="gallery-btn">‹</button>
-                        <button class="gallery-btn">›</button>
+                        <button class="gallery-btn">
+                            <img src="images/Arrow left.png" alt="Left arrow">
+                        </button>
+                        <button class="gallery-btn">
+                            <img src="images/Arrow right.png" alt="Right arrow">
+                        </button>
                     </div>
                 </div>
+                <div class="hero-zoom-preview"></div> <!-- Add this line right after .gallery-main -->
                 <div class="gallery-thumbs">
                     <div class="gallery-thumb active"><img src="images/fishwork.jpg" alt="HDPE pipe project thumbnail"
                             onerror="this.style.display='none'">
                     </div>
-                    <div class="gallery-thumb"><img src="images/image-1.jpg" alt="HDPE pipe sample thumbnail"
+                    <div class="gallery-thumb"><img src="" alt="HDPE pipe sample thumbnail"
                             onerror="this.style.display='none'"></div>
-                    <div class="gallery-thumb"><img src="images/imag2.jpg" alt="HDPE installation thumbnail"
+                    <div class="gallery-thumb"><img src="" alt="HDPE installation thumbnail"
                             onerror="this.style.display='none'"></div>
-                    <div class="gallery-thumb"><img src="images/image-back.png" alt="Product brand thumbnail"
+                    <div class="gallery-thumb"><img src="" alt="Product brand thumbnail"
                             onerror="this.style.display='none'"></div>
-                    <div class="gallery-thumb"><img src="images/Bag.png" alt="Packaging icon thumbnail"
+                    <div class="gallery-thumb"><img src="" alt="Packaging icon thumbnail"
                             onerror="this.style.display='none'"></div>
-                    <div class="gallery-thumb"><img src="images/Package.png" alt="Package icon thumbnail"
+                    <div class="gallery-thumb"><img src="" alt="Package icon thumbnail"
                             onerror="this.style.display='none'"></div>
                 </div>
             </div>
@@ -103,7 +123,10 @@
 
                 <div class="hero-buttons">
                     <button class="btn-primary">Get Custom Quote</button>
-                    <button class="btn-outline">View Technical Specs &nbsp;›</button>
+                    <button class="btn-outline">
+                        View Technical Specs
+                        <img src="images/CaretRight.png" alt="Caret right">
+                    </button>
                 </div>
             </div>
         </section>
@@ -112,29 +135,23 @@
         <section class="trusted">
             <p>Trusted by Hundreds of Companies Globally</p>
             <div class="brands-row">
-                <div class="brand-logo"><img src="images/image-back.png" alt="Euroflex company logo">
-                    <div class="brand-subtext">WE CREATE SOLUTIONS
-                    </div>
+                <div class="brand-logo"><img src="images/image 86.svg" alt="Euroflex company logo">
+
                 </div>
-                <div class="brand-logo"><img src="images/image-back.png" alt="Euroflex company logo">
-                    <div class="brand-subtext">WE CREATE SOLUTIONS
-                    </div>
+                <div class="brand-logo"><img src="images/image 86.svg" alt="Euroflex company logo">
+
                 </div>
-                <div class="brand-logo"><img src="images/image-back.png" alt="Euroflex company logo">
-                    <div class="brand-subtext">WE CREATE SOLUTIONS
-                    </div>
+                <div class="brand-logo"><img src="images/image 86.svg" alt="Euroflex company logo">
+
                 </div>
-                <div class="brand-logo"><img src="images/image-back.png" alt="Euroflex company logo">
-                    <div class="brand-subtext">WE CREATE SOLUTIONS
-                    </div>
+                <div class="brand-logo"><img src="images/image 86.svg" alt="Euroflex company logo">
+
                 </div>
-                <div class="brand-logo"><img src="images/image-back.png" alt="Euroflex company logo">
-                    <div class="brand-subtext">WE CREATE SOLUTIONS
-                    </div>
+                <div class="brand-logo"><img src="images/image 86.svg" alt="Euroflex company logo">
+
                 </div>
-                <div class="brand-logo"><img src="images/image-back.png" alt="Euroflex company logo">
-                    <div class="brand-subtext">WE CREATE SOLUTIONS
-                    </div>
+                <div class="brand-logo"><img src="images/image 86.svg" alt="Euroflex company logo">
+
                 </div>
             </div>
         </section>
@@ -202,6 +219,69 @@
         </div>
     </section>
 
+    <!-- RESOURCES -->
+    <section class="resources">
+        <h2>Resources & Downloads</h2>
+        <p class="subtitle">Get all the technical documentation and resources you need to make informed decisions about
+            our HDPE piping solutions.</p>
+        <div class="resources-list">
+            <div class="resource-row">
+                <span>HDPE Pipe Installation Manual (PDF)</span>
+                <a href="#" class="download-link">
+                    Download PDF
+                    <img src="images/Download-icon.png" alt="Download PDF">
+                </a>
+            </div>
+            <div class="resource-row">
+                <span>Maintenance & Inspection Handbook (PDF)</span>
+                <a href="#" class="download-link">
+                    Download PDF
+                    <img src="images/Download-icon.png" alt="Download PDF">
+                </a>
+            </div>
+            <div class="resource-row">
+                <span>Engineering Specifications Sheet (PDF)</span>
+                <a href="#" class="download-link">
+                    Download PDF
+                    <img src="images/Download-icon.png" alt="Download PDF">
+                </a>
+            </div>
+        </div>
+    </section>
+    <!-- modal popup -->
+    <div class="modal-overlay" id="datasheetModal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+
+            <div class="modal-header">
+                <h2 id="modalTitle">Let us email the entire catalogue to you</h2>
+                <button class="modal-close" id="modalClose" type="button" aria-label="Close">
+                    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14">
+                        <path d="M1 1l12 12M13 1L1 13" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <div class="modal-field">
+                    <label class="modal-label" for="modalEmail">Your Email <span class="required">*</span></label>
+                    <input id="modalEmail" class="modal-input" type="email" placeholder="example@gmail.com">
+                </div>
+                <div class="modal-field">
+                    <label class="modal-label" for="modalPhone">Your Contact <span
+                            class="optional">(Optional)</span></label>
+                    <input id="modalPhone" class="modal-input" type="tel" placeholder="+91-0000000000">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="modal-submit modal-submit--muted" type="button" id="downloadBrochureBtn">Download
+                    Brochure</button>
+            </div>
+
+        </div>
+    </div>
+
+
     <!-- BUILT TO LAST -->
     <section class="built">
         <h2>Built to Last. Engineered to Perform.</h2>
@@ -252,7 +332,100 @@
             </div>
         </div>
         <div class="built-cta">
-            <button class="btn-navy">Request a Quote</button>
+            <button class="btn-navy request-quote-btn">Request a Quote</button>
+        </div>
+    </section>
+
+    <!-- modal popup -->
+    <div class="modal-overlay" id="requestModal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="requestModalTitle">
+
+            <div class="modal-header">
+                <h2 id="requestModalTitle">Request a call back</h2>
+                <button class="modal-close" id="requestClose" type="button" aria-label="Close">
+                    <svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M1 1l12 12M13 1L1 13" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="modal-body">
+                <input class="modal-input" type="text" placeholder="Full Name">
+                <input class="modal-input" type="text" placeholder="Company Name">
+                <input class="modal-input" type="email" placeholder="Email Address">
+                <div class="modal-phone-row">
+                    <div class="modal-phone-prefix">
+                        +91
+                        <svg viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="2" width="12"
+                            height="12">
+                            <path d="M2 4l4 4 4-4" />
+                        </svg>
+                    </div>
+                    <input class="modal-input modal-phone-input" type="tel" placeholder="7003026616">
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button class="modal-submit" type="button">Submit Form</button>
+            </div>
+
+        </div>
+    </div>
+
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h2><span>Frequently</span> Asked Questions</h2>
+        <div class="faq-item open">
+            <button class="faq-q" onclick="toggleFaq(this)">
+                What is the purpose of a laser cutter for sheet metal?
+                <span class="chevron"><img src="images/Chevron down.png" alt=""></span>
+            </button>
+            <div class="faq-a">It is designed to cut various types of sheet metal with precision, allowing for intricate
+                designs and shapes that are essential in manufacturing processes.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+                What are the benefits of using aluminum tubing in manufacturing?
+                <span class="chevron"><img src="images/Chevron-down.png" alt=""></span>
+            </button>
+            <div class="faq-a">Aluminum tubing offers excellent strength-to-weight ratio, corrosion resistance, and is
+                highly workable, making it ideal for a wide range of manufacturing applications.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+                How is aluminum tubing produced?
+                <span class="chevron"><img src="images/Chevron-down.png" alt=""></span>
+            </button>
+            <div class="faq-a">Aluminum tubing is produced through extrusion, drawing, or rolling processes depending on
+                the required dimensions and material properties.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+                What are the common applications of aluminum tubing?
+                <span class="chevron"><img src="images/Chevron-down.png" alt=""></span>
+            </button>
+            <div class="faq-a">Common applications include aerospace, automotive, construction, HVAC systems, and
+                industrial piping due to its versatility and performance.</div>
+        </div>
+        <div class="faq-item">
+            <button class="faq-q" onclick="toggleFaq(this)">
+                Can aluminum tubing be customized?
+                <span class="chevron"><img src="images/Chevron-down.png" alt=""></span>
+            </button>
+            <div class="faq-a">Yes, aluminum tubing can be customized in terms of diameter, wall thickness, length,
+                alloy composition, and surface finish to meet specific requirements.</div>
+        </div>
+
+        <div class="catalogue-bar">
+            <div>
+                <h3>Want us to email the entire catalogue?</h3>
+                <p>Enter your email and an expert will share the catalogue with you.</p>
+            </div>
+            <div class="catalogue-right">
+                <input type="email" class="catalogue-input" placeholder="Email Address">
+                <button class="btn-catalogue">Request Catalogue</button>
+            </div>
         </div>
     </section>
 
@@ -265,8 +438,12 @@
                     delivers superior performance across diverse applications.</p>
             </div>
             <div class="apps-nav">
-                <button class="apps-nav-btn" onclick="scrollCarousel('apps', -1)">‹</button>
-                <button class="apps-nav-btn" onclick="scrollCarousel('apps', 1)">›</button>
+                <button class="apps-nav-btn" onclick="scrollCarousel('apps', -1)">
+                    <img src="images/Arrow left.png" alt="Left arrow">
+                </button>
+                <button class="apps-nav-btn" onclick="scrollCarousel('apps', 1)">
+                    <img src="images/Arrow right.png" alt="Right arrow">
+                </button>
             </div>
         </div>
         <div class="apps-carousel" id="appsCarousel">
@@ -278,7 +455,7 @@
                         threads used in modern packaging applications.</p>
                 </div>
             </div>
-            <div class="app-card active">
+            <div class="app-card">
                 <img src="images/fishwork.jpg" alt="Fishnet Manufacturing" onerror="this.style.display='none'">
                 <div class="app-card-overlay">
                     <h3>Fishnet Manufacturing</h3>
@@ -321,12 +498,19 @@
         <div class="process-card">
             <div class="process-tabs">
                 <button class="process-tab active" onclick="switchTab(this, 'raw')">Raw Material</button>
+                <span class="tab-connector"></span>
                 <button class="process-tab" onclick="switchTab(this, 'extrusion')">Extrusion</button>
+                <span class="tab-connector"></span>
                 <button class="process-tab" onclick="switchTab(this, 'cooling')">Cooling</button>
+                <span class="tab-connector"></span>
                 <button class="process-tab" onclick="switchTab(this, 'sizing')">Sizing</button>
+                <span class="tab-connector"></span>
                 <button class="process-tab" onclick="switchTab(this, 'qc')">Quality Control</button>
+                <span class="tab-connector"></span>
                 <button class="process-tab" onclick="switchTab(this, 'marking')">Marking</button>
+                <span class="tab-connector"></span>
                 <button class="process-tab" onclick="switchTab(this, 'cutting')">Cutting</button>
+                <span class="tab-connector"></span>
                 <button class="process-tab" onclick="switchTab(this, 'packaging')">Packaging</button>
             </div>
             <div class="process-body">
@@ -343,7 +527,7 @@
                     <img src="images/fishwork.jpg" alt="Manufacturing process"
                         onerror="this.style.background='#e5e7eb';this.removeAttribute('src')">
                     <div class="process-img-nav">
-                        <button>‹</button>
+                        <button><img src="images/Arrow left.png" alt=""></button>
                     </div>
                 </div>
             </div>
@@ -468,82 +652,8 @@
         </div>
     </section>
 
-    <!-- FAQ -->
-    <section class="faq">
-        <h2><span>Frequently</span> Asked Questions</h2>
-        <div class="faq-item open">
-            <button class="faq-q" onclick="toggleFaq(this)">
-                What is the purpose of a laser cutter for sheet metal?
-                <span class="chevron">∧</span>
-            </button>
-            <div class="faq-a">It is designed to cut various types of sheet metal with precision, allowing for intricate
-                designs and shapes that are essential in manufacturing processes.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
-                What are the benefits of using aluminum tubing in manufacturing?
-                <span class="chevron">∨</span>
-            </button>
-            <div class="faq-a">Aluminum tubing offers excellent strength-to-weight ratio, corrosion resistance, and is
-                highly workable, making it ideal for a wide range of manufacturing applications.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
-                How is aluminum tubing produced?
-                <span class="chevron">∨</span>
-            </button>
-            <div class="faq-a">Aluminum tubing is produced through extrusion, drawing, or rolling processes depending on
-                the required dimensions and material properties.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
-                What are the common applications of aluminum tubing?
-                <span class="chevron">∨</span>
-            </button>
-            <div class="faq-a">Common applications include aerospace, automotive, construction, HVAC systems, and
-                industrial piping due to its versatility and performance.</div>
-        </div>
-        <div class="faq-item">
-            <button class="faq-q" onclick="toggleFaq(this)">
-                Can aluminum tubing be customized?
-                <span class="chevron">∨</span>
-            </button>
-            <div class="faq-a">Yes, aluminum tubing can be customized in terms of diameter, wall thickness, length,
-                alloy composition, and surface finish to meet specific requirements.</div>
-        </div>
-        <div class="catalogue-bar">
-            <div>
-                <h3>Want us to email the entire catalogue?</h3>
-                <p>Enter your email and an expert will share the catalogue with you.</p>
-            </div>
-            <input type="email" class="catalogue-input" placeholder="Email Address">
-            <button class="btn-catalogue">Request Catalogue</button>
-        </div>
-    </section>
 
-    <!-- RESOURCES -->
-    <section class="resources">
-        <h2>Resources & Downloads</h2>
-        <p class="subtitle">Get all the technical documentation and resources you need to make informed decisions about
-            our HDPE piping solutions.</p>
-        <div class="resources-list">
-            <div class="resource-row">
-                <span>HDPE Pipe Installation Manual (PDF)</span>
-                <a href="#" class="download-link"><img src="images/fishwork.jpg" alt="PDF download icon">Download
-                    PDF</a>
-            </div>
-            <div class="resource-row">
-                <span>Maintenance & Inspection Handbook (PDF)</span>
-                <a href="#" class="download-link"><img src="images/GearFine.png" alt="PDF download icon">Download
-                    PDF</a>
-            </div>
-            <div class="resource-row">
-                <span>Engineering Specifications Sheet (PDF)</span>
-                <a href="#" class="download-link"><img src="images/fishwork.jpg" alt="PDF download icon">Download
-                    PDF</a>
-            </div>
-        </div>
-    </section>
+
 
     <!-- CONTACT CTA -->
     <section class="contact-cta">
